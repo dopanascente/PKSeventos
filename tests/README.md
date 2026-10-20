@@ -1,0 +1,1 @@
+Testes automatizados ainda não implementados. Checklist manual recomendado: CRUD em cada cadastro, cálculos monetários, estoque, cobranças, backup/restauração e visualização em 390x844 e 1366x768.

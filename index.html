@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta http-equiv="Content-Security-Policy" content="default-src 'self' data: blob:; img-src 'self' data: blob:; style-src 'self' 'unsafe-inline'; script-src 'self'; connect-src 'none'; object-src 'none'; base-uri 'none';">
+<meta name="theme-color" content="#101010">
+<title>PKS — Gestão de Eventos</title>
+<link rel="stylesheet" href="css/styles.css">
+<script defer src="js/app.js"></script>
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar" id="sidebar">
+    <a class="brand" href="#/painel" aria-label="PKS início"><span class="brand-mark">PKS</span><span><b>PKS</b><small>ESTRUTURAS & EVENTOS</small></span></a>
+    <nav id="nav">
+      <p class="nav-label">GERAL</p>
+      <a href="#/hoje" data-route="hoje"><span class="nav-icon">◷</span><span><b>Hoje</b><small>O que fazer agora</small></span><em id="today-count"></em></a>
+      <a href="#/painel" data-route="painel"><span class="nav-icon">▦</span><span><b>Painel</b><small>Visão geral</small></span></a>
+      <a href="#/agenda" data-route="agenda"><span class="nav-icon">▦</span><span><b>Agenda</b><small>Calendário de eventos</small></span></a>
+      <p class="nav-label">COMERCIAL</p>
+      <a href="#/eventos" data-route="eventos"><span class="nav-icon">▤</span><span><b>Eventos</b><small>Orçamentos e contratos</small></span></a>
+      <a href="#/clientes" data-route="clientes"><span class="nav-icon">♙</span><span><b>Clientes</b><small>Contatos e histórico</small></span></a>
+      <a href="#/catalogo" data-route="catalogo"><span class="nav-icon">▧</span><span><b>Catálogo e estoque</b><small>Itens e quantidades</small></span></a>
+      <p class="nav-label">FINANCEIRO</p>
+      <a href="#/financeiro" data-route="financeiro"><span class="nav-icon">R$</span><span><b>Financeiro</b><small>Entradas e saídas</small></span><em id="finance-count"></em></a>
+      <a href="#/fornecedores" data-route="fornecedores"><span class="nav-icon">♧</span><span><b>Fornecedores</b><small>Parceiros e serviços</small></span></a>
+      <p class="nav-label">SISTEMA</p>
+      <a href="#/equipe" data-route="equipe"><span class="nav-icon">♧</span><span><b>Equipe</b><small>Pessoas e funções</small></span></a>
+      <a href="#/configuracoes" data-route="configuracoes"><span class="nav-icon">⚙</span><span><b>Configurações</b><small>Dados e backups</small></span></a>
+    </nav>
+    <div class="sidebar-footer"><span class="status-dot"></span> Seus dados ficam neste navegador</div>
+  </aside>
+  <main class="main-area">
+    <header class="topbar">
+      <div class="top-left"><span class="cash-chip" id="top-balance">Saldo R$ 0,00</span><button class="icon-btn mobile-menu" id="menu-btn" aria-label="Abrir menu">☰</button></div>
+      <div class="greeting"><b id="greeting">Boa noite!</b><small id="today-date"></small></div>
+      <div class="top-actions"><button class="secondary-btn" id="search-open" title="Busca global (Ctrl+K)">⌕ <span>Buscar</span></button><button class="icon-btn" id="theme-btn" title="Alternar tema">◐</button><button class="primary-btn" id="quick-new">＋ Novo evento</button></div>
+    </header>
+    <section id="view" class="view" tabindex="-1"></section>
+    <footer class="app-footer">PKS Gestão · Versão local · Faça backups regularmente.</footer>
+  </main>
+</div>
+<div id="modal-root"></div>
+<div id="toast-root" aria-live="polite"></div>
+<div class="command-overlay hidden" id="command-overlay">
+  <div class="command-box"><div class="command-search"><span>⌕</span><input id="command-input" placeholder="Buscar cliente, evento, item ou ação..." autocomplete="off"><kbd>ESC</kbd></div><div id="command-results"></div></div>
+</div>
+</body>
+</html>
